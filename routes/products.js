@@ -14,7 +14,7 @@ const findAllProducts = async (req, res) => {
 const findOneProduct = async (req, res) => {
     const {id} = req.params
     try{
-        const product = await Product.findOne({_id: id}).select("_id name categories")
+        const product = await Product.findOne({_id: id}).select("_id name categories desc")
         return res.status(200).send({message:"Producto encontrado", product})
     } catch (error) {
         return res.status(501).send({message:"Lol you failed",error})
