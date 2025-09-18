@@ -4,7 +4,7 @@ import Product from "../models/products.js";
 
 const findAllProducts = async (req, res) => {
     try {
-        const products = await Product.find().select("_id name")
+        const products = await Product.find().select("_id name categories")
         return res.status(200).send({message: "Todos los productos",products: products})
     } catch (error) {
         return res.status(501).send({message:"Lol you failed",error})
