@@ -2,7 +2,6 @@ import express from "express";
 const router = express.Router();
 import Order from "../models/order.js";
 
-
 const addOrder = async (req, res) => {
   // const { name, categories } = req.body;
     try {
